@@ -1,0 +1,25 @@
+@(user: model.User)
+<!DOCTYPE html>
+<html>
+    <body>
+        <img width="100" height="100" src="@user.avatar_url">
+        <table border="1">
+            <tr>
+                <th>Name</th>
+                <th>E-mail</th>
+                <th>Followers</th>
+            </tr>
+            <tr>
+                <td>
+                    <a href="@user.html_url">@user.name</a>
+                </td>
+                <td>
+                    @user.email
+                </td>
+                <td>
+                    @user.followers
+                </td>
+            </tr>
+        </table>
+    </body>
+</html>
