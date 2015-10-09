@@ -14,7 +14,8 @@ enablePlugins(HaxeNekoPlugin)
 
 enablePlugins(HaxePhpPlugin)
 
-enablePlugins(HaxeJsPlugin)
+// Haxe compiler will hang up when compiling for JavaScript target
+// enablePlugins(HaxeJsPlugin)
 
 enablePlugins(RestRpc)
 
@@ -28,16 +29,19 @@ libraryDependencies += "org.specs2" %% "specs2-core" % "3.6.4" % Test
 
 routesGenerator := InjectedRoutesGenerator
 
-for (c <- Seq(Compile, Test)) yield {
-  haxeOptions in c ++= Seq("-lib", "continuation")
+for (c <- AllTargetConfigurations ++ AllTestTargetConfigurations) yield {
+  haxeOptions in c ++= Seq(
+    "-lib", "hxparse",
+    "-lib", "continuation",
+    "-dce", "no")
+}
+
+for (c <- Seq(CSharp, TestCSharp)) yield {
+  haxeOptions in c ++= Seq("-lib", "HUGS")
 }
 
 for (c <- Seq(Compile, Test)) yield {
   haxeOptions in c ++= Seq("-D", "scala")
-}
-
-for (c <- Seq(Compile, Test)) yield {
-  haxeOptions in c ++= Seq("-dce", "no")
 }
 
 libraryDependencies += "com.qifun" %% "json-stream" % "0.2.3" % HaxeJava classifier "haxe-java"
