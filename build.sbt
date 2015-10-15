@@ -17,7 +17,7 @@ enablePlugins(HaxePhpPlugin)
 // Haxe compiler will hang up when compiling for JavaScript target
 // enablePlugins(HaxeJsPlugin)
 
-enablePlugins(RestRpc)
+enablePlugins(Microbuilder)
 
 enablePlugins(PlayScala)
 
