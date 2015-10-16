@@ -1,5 +1,5 @@
-[![Build Status](https://travis-ci.org/ThoughtWorksInc/rest-rpc-sample.svg)](https://travis-ci.org/ThoughtWorksInc/rest-rpc-sample)
-[![Codacy Badge](https://www.codacy.com/project/badge/daa4b0e6de4647fc94eeb01fbe331438)](https://www.codacy.com/app/zhanglongyang/rest-rpc-sample)
+[![Build Status](https://travis-ci.org/ThoughtWorksInc/microbuilder-sample.svg)](https://travis-ci.org/ThoughtWorksInc/microbuilder-sample)
+[![Codacy Badge](https://www.codacy.com/project/badge/daa4b0e6de4647fc94eeb01fbe331438)](https://www.codacy.com/app/zhanglongyang/microbuilder-sample)
 
 ##What is Microbuilder
 *Microbuilder*​ is a toolset that helps you build systems across multiple micro-services and multiple languages.
