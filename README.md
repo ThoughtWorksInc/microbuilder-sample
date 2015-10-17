@@ -50,10 +50,10 @@ MicroBuilder provides a Play adaptor. To use this adaptor, your folder stucture 
 │       ├── model
 │       │   └── User.hx
 │       ├── proxy
-│       │   ├── RestRpcDeserializer.hx
-│       │   ├── RestRpcOutgoingProxyFactory.hx
-│       │   ├── RestRpcRouteConfigurationFactory.hx
-│       │   └── RestRpcSerializer.hx
+│       │   ├── MicrobuilderDeserializer.hx
+│       │   ├── MicrobuilderOutgoingProxyFactory.hx
+│       │   ├── MicrobuilderRouteConfigurationFactory.hx
+│       │   └── MicrobuilderSerializer.hx
 │       └── rpc
 │           └── IUserRpc.hx
 ```
@@ -95,5 +95,5 @@ The url template syntax complys with [rfc6570](https://tools.ietf.org/html/rfc65
 
 Be aware, this return type `Future` is not a scala standard `Future`, that's why we provide a implicit conversion to convert this `com.qifun.jsonStream.rpc.Future` to `scala.concurrent`. To utilise this implicit conversion, add the following line to the file where you want to consume the Future result:
 
-`import com.thoughtworks.restRpc.play.Implicits._`
+`import com.thoughtworks.microbuilder.play.Implicits._`
 

@@ -4,8 +4,8 @@ using com.qifun.jsonStream.Plugins;
 
 @:nativeGen
 @:build(com.qifun.jsonStream.JsonDeserializer.generateDeserializer([
-    "com.thoughtworks.restRpc.core.Failure",
+    "com.thoughtworks.microbuilder.core.Failure",
     "model.User"
 ]))
-class RestRpcDeserializer {
+class MicrobuilderDeserializer {
 }

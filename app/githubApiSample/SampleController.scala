@@ -1,6 +1,6 @@
 package githubApiSample
 
-import com.thoughtworks.restRpc.play.Implicits._
+import com.thoughtworks.microbuilder.play.Implicits._
 import play.api.mvc._
 import rpc.IUserRpc
 
