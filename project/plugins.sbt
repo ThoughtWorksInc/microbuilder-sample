@@ -1,1 +1,1 @@
-addSbtPlugin("com.thoughtworks.microbuilder" % "sbt-haxe" % "2.1.0")
+addSbtPlugin("com.thoughtworks.microbuilder" % "sbt-haxe" % "2.2.0")
