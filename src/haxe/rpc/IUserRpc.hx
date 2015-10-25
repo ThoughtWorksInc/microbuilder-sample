@@ -1,6 +1,6 @@
 package rpc;
 
-import com.qifun.jsonStream.rpc.Future;
+import jsonStream.rpc.Future;
 import model.User;
 
 interface IUserRpc {

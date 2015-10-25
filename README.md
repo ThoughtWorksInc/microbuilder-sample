@@ -77,7 +77,7 @@ As you can see in the following definition:
 ```
 package rpc;
 
-import com.qifun.jsonStream.rpc.Future;
+import jsonStream.rpc.Future;
 import model.User;
 
 interface IUserRpc {
@@ -93,7 +93,7 @@ The url template syntax complys with [rfc6570](https://tools.ietf.org/html/rfc65
 
 ###The return type
 
-Be aware, this return type `Future` is not a scala standard `Future`, that's why we provide a implicit conversion to convert this `com.qifun.jsonStream.rpc.Future` to `scala.concurrent`. To utilise this implicit conversion, add the following line to the file where you want to consume the Future result:
+Be aware, this return type `Future` is not a scala standard `Future`, that's why we provide a implicit conversion to convert this `jsonStream.rpc.Future` to `scala.concurrent`. To utilise this implicit conversion, add the following line to the file where you want to consume the Future result:
 
 `import com.thoughtworks.microbuilder.play.Implicits._`
 

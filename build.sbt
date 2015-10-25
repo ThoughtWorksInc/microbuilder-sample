@@ -49,12 +49,3 @@ libraryDependencies += "com.qifun" %% "json-stream" % "0.2.3" % HaxeJava classif
 libraryDependencies += "com.qifun" %% "json-stream" % "0.2.3"
 
 libraryDependencies += "com.qifun" %% "haxe-scala-stm" % "0.1.4" % HaxeJava classifier "haxe-java"
-
-
-for (c <- AllTargetConfigurations) yield {
-  haxeMacros in c += """com.dongxiguo.autoParser.AutoParser.BUILDER.defineMacroClass([ "com.thoughtworks.microbuilder.core.UriTemplate" ], "com.thoughtworks.microbuilder.core.UriTemplateParser")"""
-}
-
-for (c <- AllTargetConfigurations) yield {
-  haxeMacros in c += """com.dongxiguo.autoParser.AutoFormatter.BUILDER.defineMacroClass([ "com.thoughtworks.microbuilder.core.UriTemplate" ], "com.thoughtworks.microbuilder.core.UriTemplateFormatter")"""
-}

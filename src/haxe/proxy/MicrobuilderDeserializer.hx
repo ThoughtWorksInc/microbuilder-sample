@@ -1,9 +1,9 @@
 package proxy;
 
-using com.qifun.jsonStream.Plugins;
+using jsonStream.Plugins;
 
 @:nativeGen
-@:build(com.qifun.jsonStream.JsonDeserializer.generateDeserializer([
+@:build(jsonStream.JsonDeserializer.generateDeserializer([
     "com.thoughtworks.microbuilder.core.Failure",
     "model.User"
 ]))
