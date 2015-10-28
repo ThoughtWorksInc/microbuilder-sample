@@ -41,6 +41,6 @@ for (c <- Seq(Compile, Test)) yield {
 
 libraryDependencies += "com.thoughtworks.microbuilder" %% "json-stream" % "2.0.0"% HaxeJava classifier HaxeJava.name
 
-libraryDependencies += "com.qifun" %% "json-stream" % "0.2.3"
+libraryDependencies += "com.thoughtworks.microbuilder" %% "json-stream" % "2.0.0"
 
 libraryDependencies += "com.qifun" %% "haxe-scala-stm" % "0.1.4" % HaxeJava classifier HaxeJava.name
