@@ -31,13 +31,8 @@ routesGenerator := InjectedRoutesGenerator
 
 for (c <- AllTargetConfigurations ++ AllTestTargetConfigurations) yield {
   haxeOptions in c ++= Seq(
-    "-lib", "hxparse",
     "-lib", "continuation",
     "-dce", "no")
-}
-
-for (c <- Seq(CSharp, TestCSharp)) yield {
-  haxeOptions in c ++= Seq("-lib", "HUGS")
 }
 
 for (c <- Seq(Compile, Test)) yield {
