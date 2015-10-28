@@ -85,7 +85,7 @@ interface IUserRpc {
     function getSingleUser(username:String):Future<User>;
 }
 ```
-As you see, you can specify the url template in @route template. So if you call `getSingleUser("Atry")`, you are actually making a http request to `https://api.github.com/users/Atry`. And the response is a JSON like the following:
+As you see, you can specify the url template in @route template. So if you call `getSingleUser("Atry")`, you are actually making a http request to `https://api.github.com/users/Atry`. 
 
 Since making http request is a time consuming operation, we let it return a `Future` type for you to consume.
 
