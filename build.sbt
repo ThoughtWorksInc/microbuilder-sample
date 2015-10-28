@@ -39,8 +39,8 @@ for (c <- Seq(Compile, Test)) yield {
   haxeOptions in c ++= Seq("-D", "scala")
 }
 
-libraryDependencies += "com.qifun" %% "json-stream" % "0.2.3" % HaxeJava classifier "haxe-java"
+libraryDependencies += "com.qifun" %% "json-stream" % "0.2.3" % HaxeJava classifier HaxeJava.name
 
 libraryDependencies += "com.qifun" %% "json-stream" % "0.2.3"
 
-libraryDependencies += "com.qifun" %% "haxe-scala-stm" % "0.1.4" % HaxeJava classifier "haxe-java"
+libraryDependencies += "com.qifun" %% "haxe-scala-stm" % "0.1.4" % HaxeJava classifier HaxeJava.name
