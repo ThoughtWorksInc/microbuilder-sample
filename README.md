@@ -134,7 +134,7 @@ If error response is not structured, then no bother to add that annotation.
 
 There are four type of exceptions that may yield from `Future`'s onFailure handler:
 
-* StructuralApplicationException[A](data: A, code: Int)
+* StructuralApplicationException\[A\](data: A, code: Int)
 
 As mentioned in `Error response handling` section, if your server error response is structured and unified, then you can configure the `structuralFailure` annotation and expect this failure.
 `data` is the deserialized object representing the error message, and `code` is the response status.
