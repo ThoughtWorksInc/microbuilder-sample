@@ -31,8 +31,7 @@ And The method can retrive the json response and automatically deserialize it to
 It's easy to do it using MicroBuilder.
 
 ##Use MicroBuilder in Play
-  
-MicroBuilder provides a Play adaptor. To use this adaptor, your folder stucture will look like this:
+As you see in this repo, MicroBuilder provides a Play adaptor. To use this adaptor, your folder stucture will look like this:
 
 ```
 .
@@ -97,3 +96,62 @@ Be aware, this return type `Future` is not a scala standard `Future`, that's why
 
 `import com.thoughtworks.microbuilder.play.Implicits._`
 
+###Error response handling
+If your server response is in a fixed format. For example, like this:
+```
+{
+    "code":1,
+    "errorMsgs": [
+        "error message 1",
+        "error message 2",
+        "error message 3"
+    ]
+}
+```
+
+Then you can configure an annotation on rpc interface definition as follow:
+
+```
+class XXXFailure {
+    public var code:Int;
+    public var errorMsg:String;
+}
+```
+
+```
+@:structuralFailure(XXXFailure)
+interface MyRpcWithStructuralException {
+...
+}
+```
+
+Then the error response will be automatically deserialized, and be available in `Future`'s onFailure handler.
+Check the `Exception handing` section for how to use this deserialized object.
+
+If error response is not structured, then no bother to add that annotation.
+
+###Exception handling
+
+There are four type of exceptions that may yield from `Future`'s onFailure handler:
+
+* StructuralApplicationException\[A\](data: A, code: Int)
+
+As mentioned in `Error response handling` section, if your server error response is structured and unified, then you can configure the `structuralFailure` annotation and expect this failure.
+`data` is the deserialized object representing the error message, and `code` is the response status.
+
+
+* TextApplicationException(reason: String, code: Int)
+
+When your server error response is not structured, and you didn't configure the `structuralFailure` annotation, then you can expect this failure.
+`reason` is exactly the same as what you get from the server, and `code` is the response status.
+  
+  
+* NativeException(reason: String)
+
+You will meet this exception for IO errors.
+`reason` is the IO exception message.
+
+* WrongResponseFormatException(reason: String)
+
+You will meet this exception if the server response is not a json.
+`reason` will show you the wrong json.
