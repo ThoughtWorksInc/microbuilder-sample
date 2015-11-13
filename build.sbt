@@ -1,19 +1,5 @@
 enablePlugins(HaxeJavaPlugin)
 
-enablePlugins(HaxeCSharpPlugin)
-
-enablePlugins(HaxeCppPlugin)
-
-enablePlugins(HaxeFlashPlugin)
-
-enablePlugins(HaxeAs3Plugin)
-
-enablePlugins(HaxePythonPlugin)
-
-enablePlugins(HaxeNekoPlugin)
-
-enablePlugins(HaxePhpPlugin)
-
 // Haxe compiler will hang up when compiling for JavaScript target
 // enablePlugins(HaxeJsPlugin)
 
@@ -29,10 +15,17 @@ libraryDependencies += "org.specs2" %% "specs2-core" % "3.6.4" % Test
 
 routesGenerator := InjectedRoutesGenerator
 
+val haxelibs = Map(
+  "continuation" -> DependencyVersion.SpecificVersion("1.3.2")
+)
+
+
 for (c <- AllTargetConfigurations ++ AllTestTargetConfigurations) yield {
-  haxeOptions in c ++= Seq(
-    "-lib", "continuation",
-    "-dce", "no")
+  haxeOptions in c ++= haxelibOptions(haxelibs)
+}
+
+for (c <- AllTargetConfigurations ++ AllTestTargetConfigurations) yield {
+  haxeOptions in c ++= Seq("-dce", "no")
 }
 
 for (c <- Seq(Compile, Test)) yield {
