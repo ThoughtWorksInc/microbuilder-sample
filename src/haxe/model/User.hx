@@ -23,15 +23,7 @@ class User {
     public var site_admin:Bool;
     public var name:String;
     public var company:String;
-    public var blog:String;
     public var location:String;
     public var email:String;
-    public var hireable:Bool;
-    public var bio:String;
-    public var public_repos:Int;
-    public var public_gists:Int;
     public var followers:Int;
-    public var following:Int;
-    public var created_at:String;
-    public var updated_at:String;
 }
