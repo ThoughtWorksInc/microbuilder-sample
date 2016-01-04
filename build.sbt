@@ -2,6 +2,8 @@ enablePlugins(Microbuilder)
 
 enablePlugins(PlayScala)
 
+enablePlugins(HaxeJsPlugin)
+
 organization := "com.thoughtworks"
 
 name := "microbuilder-sample"
