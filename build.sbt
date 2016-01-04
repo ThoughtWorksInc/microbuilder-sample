@@ -1,4 +1,4 @@
-enablePlugins(Microbuilder)
+enablePlugins(MicrobuilderPlay)
 
 enablePlugins(PlayScala)
 
