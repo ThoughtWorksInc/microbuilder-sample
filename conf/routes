@@ -1,1 +1,2 @@
-GET /user/:username githubApiSample.SampleController.getUserPage(username:String)
+GET        /user/:username        githubApiSample.SampleController.getUserPage(username:String)
+GET        /assets/*file          controllers.Assets.at(path="/public", file)

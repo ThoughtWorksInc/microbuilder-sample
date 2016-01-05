@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script src="lib/browser-request/dist/browser/request-min.js"></script>
+<script src="microbuilder-sample.js" type="text/javascript"></script>
+<script type="text/javascript">
+    var routeConfiguration = proxy.MicrobuilderRouteConfigurationFactory.routeConfiguration_rpc_IUserRpc();
+//    var urlPrifix = "https://api.github.com/wrong-prefix";
+    var urlPrifix = "fixture";
+    var outgoingJsonService = new com.thoughtworks.microbuilder.js.JsOutgoingJsonService(urlPrifix, routeConfiguration, request);
+    var userRpc = proxy.MicrobuilderOutgoingProxyFactory.outgoingProxy_rpc_IUserRpc(outgoingJsonService);
+    userRpc.getSingleUser("Atry").then(function(data) {
+        console.dir(data)
+    });
+</script>
+</body>
+</html>

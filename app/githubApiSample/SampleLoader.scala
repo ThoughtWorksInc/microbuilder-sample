@@ -19,7 +19,8 @@ class SampleLoader extends ApplicationLoader {
       lazy val outgoingJsonService = new PlayOutgoingJsonService("https://api.github.com", routeConfiguration, wsApi)(actorSystem.dispatcher)
       lazy val userRpc = MicrobuilderOutgoingProxyFactory.outgoingProxy_rpc_IUserRpc(outgoingJsonService)
       lazy val sampleController = new SampleController(userRpc)(actorSystem.dispatcher)
-      override lazy val router: Router = new Routes(httpErrorHandler, sampleController)
+      lazy val assets = new controllers.Assets(httpErrorHandler)
+      override lazy val router: Router = new Routes(httpErrorHandler, sampleController, assets)
     }
 
     components.application
