@@ -19,8 +19,8 @@ haxeJsFiles := {
   val jsFileMappings = for {
     jsFile <- (haxe in Js).value
     mapping <- Seq(
-      jsFile.getParentFile / raw"""${jsFile.getName}.map""" -> destinationDirectory / raw"""${jsFile.getName}.map""",
-      jsFile -> destinationDirectory / jsFile.getName
+      jsFile.getParentFile / raw"""${jsFile.getName}.map""" -> destinationDirectory / "microbuilder-sample.js.map",
+      jsFile -> destinationDirectory / "microbuilder-sample.js"
     )
   } yield mapping
   IO.copy(jsFileMappings).toSeq
