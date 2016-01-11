@@ -1,4 +1,4 @@
-package model;
+package com.thoughtworks.microbuilder.sample.model;
 
 @:expose
 @:final

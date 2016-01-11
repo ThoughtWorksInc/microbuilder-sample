@@ -1,9 +1,9 @@
-package rpc;
+package com.thoughtworks.microbuilder.sample.rpc;
 
 import jsonStream.rpc.Future;
-import model.User;
+import com.thoughtworks.microbuilder.sample.model.User;
 
-@:structuralFailure(model.GithubFailure)
+@:structuralFailure(com.thoughtworks.microbuilder.sample.model.GithubFailure)
 interface IUserRpc {
 
   @:responseContentType("application/json; charset=utf-8")

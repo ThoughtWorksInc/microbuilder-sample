@@ -2,6 +2,7 @@ package githubApiSample
 
 import com.thoughtworks.microbuilder.play.Implicits._
 import play.api.mvc._
+import com.thoughtworks.microbuilder.sample._
 import rpc.IUserRpc
 
 import scala.concurrent.{Promise, ExecutionContext}

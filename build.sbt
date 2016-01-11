@@ -4,9 +4,9 @@ enablePlugins(MicrobuilderJs)
 
 enablePlugins(PlayScala)
 
-organization := "com.thoughtworks"
+organization := "com.thoughtworks.microbuilder"
 
-name := "microbuilder-sample"
+name := "sample"
 
 libraryDependencies += "org.specs2" %% "specs2-core" % "3.6.4" % Test
 
