@@ -1,2 +1,3 @@
 GET        /user/:username        githubApiSample.SampleController.getUserPage(username:String)
 GET        /assets/*file          controllers.Assets.at(path="/public", file)
+GET        /api/*url          com.thoughtworks.microbuilder.play.RpcController.rpc(url:String)

@@ -4,10 +4,11 @@ import jsonStream.rpc.Future;
 import com.thoughtworks.microbuilder.sample.model.User;
 
 @:structuralFailure(com.thoughtworks.microbuilder.sample.model.GithubFailure)
+@:nativeGen
 interface IUserRpc {
 
   @:responseContentType("application/json; charset=utf-8")
-  @:route("GET", "/users/{username}")
+  @:route("GET", "users/{username}")
   function getSingleUser(username:String):Future<User>;
   
 }
